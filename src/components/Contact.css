@@ -1,0 +1,61 @@
+.contact {
+  position: relative;
+  padding-top: clamp(5rem, 11vw, 9rem);
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(60% 80% at 85% 0%, rgba(124, 92, 255, 0.22), transparent 70%),
+    var(--night);
+}
+
+.contact__title {
+  font-size: clamp(2.3rem, 5.5vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  font-weight: 720;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.contact__lead {
+  color: var(--muted);
+  font-size: 1.12rem;
+  max-width: 34rem;
+  margin-top: 1.25rem;
+}
+
+.contact__email {
+  display: inline-block;
+  margin-top: 2.5rem;
+  font-size: clamp(1.2rem, 3.6vw, 2.4rem);
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  color: var(--lilac);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(205, 190, 255, 0.3);
+  overflow-wrap: anywhere;
+  transition: border-color 0.2s;
+}
+
+.contact__email:hover {
+  border-bottom-color: var(--lilac);
+}
+
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.contact__base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-top: clamp(4rem, 9vw, 7rem);
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+  color: var(--muted);
+}

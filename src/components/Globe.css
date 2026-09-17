@@ -1,0 +1,66 @@
+.globe {
+  position: relative;
+  width: min(100%, 540px);
+  margin-inline: auto;
+}
+
+.globe::before {
+  content: '';
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.45), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.globe__canvas {
+  width: 100%;
+  aspect-ratio: 1;
+  cursor: grab;
+  touch-action: pan-y;
+  animation: globe-in 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.globe__canvas:active {
+  cursor: grabbing;
+}
+
+.globe__legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.globe__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.globe__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.globe__dash {
+  width: 18px;
+  border-top: 2px dashed var(--gold);
+}
+
+@keyframes globe-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

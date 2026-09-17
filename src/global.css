@@ -1,0 +1,152 @@
+:root {
+  --night: #0d0a22;
+  --deep: #151033;
+  --raise: #1e1846;
+  --line: rgba(205, 190, 255, 0.14);
+  --violet: #7c5cff;
+  --violet-hi: #9a84ff;
+  --lilac: #cdbeff;
+  --text: #ece9f8;
+  --muted: #a39ec3;
+  --gold: #e7c66b;
+  --font: 'Bricolage Grotesque', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --wrap: min(1180px, 100% - 3rem);
+  --nav-h: 68px;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-h);
+}
+
+body {
+  background: var(--night);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lilac);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.wrap {
+  width: var(--wrap);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(4.5rem, 10vw, 8rem);
+}
+
+.section-head {
+  max-width: 42rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  font-weight: 650;
+}
+
+.section-head p {
+  color: var(--muted);
+  margin-top: 1rem;
+  max-width: 36rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary {
+  background: var(--violet);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--violet-hi);
+}
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--lilac);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+}
+
+.tags li {
+  font-size: 0.82rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(124, 92, 255, 0.13);
+  color: var(--lilac);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
