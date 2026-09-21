@@ -33,7 +33,7 @@
   gap: 0.4rem 1.4rem;
   margin-top: 1rem;
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--dark-muted);
 }
 
 .globe__legend span {
@@ -46,12 +46,12 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--dark-gold);
 }
 
 .globe__dash {
   width: 18px;
-  border-top: 2px dashed var(--gold);
+  border-top: 2px dashed var(--dark-gold);
 }
 
 @keyframes globe-in {

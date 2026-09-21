@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
+import Gallery from './components/Gallery.jsx';
 import Projects from './components/Projects.jsx';
 import Services from './components/Services.jsx';
 import Journey from './components/Journey.jsx';
@@ -12,9 +13,9 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Gallery />
         <Projects />
         <Services />
-        <Journey />
         <Process />
         <Contact />
       </main>

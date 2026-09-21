@@ -16,8 +16,8 @@
 
 .project__visual {
   border-radius: 28px;
-  background: linear-gradient(160deg, var(--deep), #120e2c);
-  border: 1px solid var(--line);
+  background: linear-gradient(160deg, var(--dark-panel), #120e2c);
+  border: 1px solid var(--dark-line);
   padding: clamp(0.5rem, 2vw, 1.25rem);
 }
 

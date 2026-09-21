@@ -3,6 +3,7 @@
 export const profile = {
   name: 'Leandro Soares Pereira',
   shortName: 'Leandro Soares',
+  number: 'wa.me/5538997298506',
   email: 'leandrosoares658@gmail.com',
   github: 'https://github.com/leandrosoares658',
   city: 'Montes Claros, MG',
@@ -10,7 +11,7 @@ export const profile = {
 
 export const stack = [
   'React', 'Node.js', 'Python', 'C#', 'SQL', 'FastAPI',
-  'XGBoost', 'LangGraph', 'CLP Siemens', 'SCADA iFix',
+  'XGBoost', 'LangGraph', 'UI', 'UX',
 ];
 
 // visual: 'clinical' | 'marketplace' | 'vibration' | 'finance'
@@ -56,7 +57,16 @@ export const projects = [
 
 export const smallProjects = [
   { title: 'Controle de volume por gestos', detail: 'Python, OpenCV e MediaPipe' },
-  { title: 'Site institucional Audioclini', detail: 'Desenvolvimento web' },
+  { title: 'Site institucional Urban Fight', detail: 'Desenvolvimento web' },
+  { title: 'E-commerce SG Printer', detail: 'Desenvolvimento web' },
+];
+
+export const galleryImages = [
+  { id: 'sozinha', title: 'Sozinha Nunca Mais', file: 'sozinhanuncamais.jpg' },
+  { id: 'escala', title: 'Escala Summit', file: 'escalasummit.jpg' },
+  { id: 'audioclini', title: 'Instituto Audioclini', file: 'institutoaudioclini.jpg' },
+  { id: 'financeiro', title: 'Sistema Financeiro', file: 'controle-financeiro.jpg' },
+  { id: 'urbanfight', title: 'Urban Fight', file: 'urbanfight.jpg' },
 ];
 
 export const services = [
@@ -64,16 +74,19 @@ export const services = [
     title: 'Produtos web e aplicativos',
     text: 'Do protótipo ao sistema em produção: interface em React, APIs em Node.js, Python ou C#, banco de dados e publicação. Código organizado para que outra pessoa consiga continuar depois.',
     examples: ['Sistemas internos', 'SaaS e MVPs', 'PWAs', 'Integrações entre sistemas'],
+    visual: 'web',
   },
   {
     title: 'Dados e IA aplicada',
     text: 'Modelos de machine learning e agentes com LLM encaixados no seu processo, com explicação para cada resultado e cuidado com dados sensíveis desde o desenho, conforme a LGPD.',
     examples: ['Modelos preditivos', 'Agentes com LLM', 'Transcrição e extração de documentos'],
+    visual: 'ai',
   },
   {
     title: 'Software para a indústria',
     text: 'Coleta de dados do chão de fábrica, indicadores de OEE, integração com CLP e SCADA e a documentação que ambientes regulados exigem.',
     examples: ['Servidores OPC', 'Painéis de produção', 'Validação GAMP 5'],
+    visual: 'industry',
   },
 ];
 
@@ -107,7 +120,7 @@ export const industry = {
 };
 
 export const education = [
-  { year: 'Em andamento', title: 'Engenharia Elétrica', place: 'Unimontes' },
+  { year: 'Em andamento', title: 'Engenharia de Sistemas', place: 'Unimontes' },
   { year: 'Concluída', title: 'Ciência de Dados', place: 'Cruzeiro do Sul' },
   { year: '2023', title: 'Elau PacDrive 3 Motion Control', place: 'Schneider Electric' },
   { year: '2022', title: 'Gestão de Riscos', place: 'FGV' },

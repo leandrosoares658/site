@@ -6,15 +6,30 @@ import './Globe.css';
 
 const BRAZIL_ID = '076';
 const HOME = [-43.86, -16.73]; // Montes Claros, MG
-const ITALY = [11.99, 45.6]; // FAT na Itália
-const CENTER = [-16, 8]; // ponto que o globo mantém de frente
+const CENTER = [-10, 10]; // ponto que o globo mantém de frente
+
+// Conexões que dão a sensação de alcance internacional.
+const DESTINATIONS = [
+  { name: 'Itália', coords: [12.5, 41.9] },
+  { name: 'Alemanha', coords: [13.4, 52.52] },
+  { name: 'Rússia', coords: [37.62, 55.75] },
+  { name: 'China', coords: [116.4, 39.9] },
+  { name: 'Estados Unidos', coords: [-74.0, 40.71] },
+  { name: 'Colômbia', coords: [-74.08, 4.71] },
+];
 
 const countries = feature(world, world.objects.countries).features;
 const borders = mesh(world, world.objects.countries, (a, b) => a !== b);
 const brazil = countries.find((c) => c.id === BRAZIL_ID);
 const graticule = geoGraticule10();
-const interp = geoInterpolate(HOME, ITALY);
-const arc = { type: 'LineString', coordinates: Array.from({ length: 64 }, (_, i) => interp(i / 63)) };
+
+const arcs = DESTINATIONS.map((d) => {
+  const interp = geoInterpolate(HOME, d.coords);
+  return {
+    ...d,
+    line: { type: 'LineString', coordinates: Array.from({ length: 64 }, (_, i) => interp(i / 63)) },
+  };
+});
 
 export default function Globe() {
   const ref = useRef(null);
@@ -79,19 +94,21 @@ export default function Globe() {
       ctx.lineWidth = 0.5;
       ctx.stroke();
 
-      ctx.beginPath();
-      path(arc);
-      ctx.setLineDash([5, 5]);
-      ctx.lineDashOffset = reduce ? 0 : -t * 0.02;
-      ctx.strokeStyle = 'rgba(231, 198, 107, 0.9)';
-      ctx.lineWidth = 1.4;
-      ctx.stroke();
-      ctx.setLineDash([]);
+      arcs.forEach((a) => {
+        ctx.beginPath();
+        path(a.line);
+        ctx.setLineDash([5, 5]);
+        ctx.lineDashOffset = reduce ? 0 : -t * 0.02;
+        ctx.strokeStyle = 'rgba(231, 198, 107, 0.75)';
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.setLineDash([]);
+      });
 
-      [HOME, ITALY].forEach((coords, i) => {
+      [HOME, ...arcs.map((a) => a.coords)].forEach((coords, i) => {
         if (geoDistance(coords, center) > Math.PI / 2 - 0.05) return;
         const [x, y] = projection(coords);
-        const pulse = reduce ? 0.5 : ((t * 0.0006 + i * 0.5) % 1);
+        const pulse = reduce ? 0.5 : ((t * 0.0006 + i * 0.4) % 1);
         ctx.beginPath();
         ctx.arc(x, y, 4 + pulse * 14, 0, Math.PI * 2);
         ctx.strokeStyle = `rgba(231, 198, 107, ${0.8 * (1 - pulse)})`;
@@ -153,12 +170,8 @@ export default function Globe() {
         ref={ref}
         className="globe__canvas"
         role="img"
-        aria-label="Globo com o Brasil em destaque e uma rota entre Montes Claros e a Itália"
+        aria-label="Globo com o Brasil em destaque e rotas para outros países, mostrando alcance internacional"
       />
-      <figcaption className="globe__legend">
-        <span><i className="globe__dot" /> Montes Claros, MG</span>
-        <span><i className="globe__dash" /> Rota do FAT na Itália</span>
-      </figcaption>
     </figure>
   );
 }

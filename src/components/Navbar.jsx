@@ -35,7 +35,7 @@ export default function Navbar() {
             ))}
           </ul>
         </nav>
-        <a className="btn btn-primary nav__cta" href={`mailto:${profile.email}`}>
+        <a className="btn btn-primary nav__cta" href={profile.number} target="_blank" rel="noreferrer">
           Falar comigo
         </a>
       </div>

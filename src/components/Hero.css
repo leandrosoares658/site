@@ -5,7 +5,9 @@
   padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
   overflow: hidden;
   isolation: isolate;
-  border-bottom: 1px solid var(--line);
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--dark-line);
 }
 
 .starfield {
@@ -24,7 +26,7 @@
 }
 
 .hero__intro {
-  color: var(--lilac);
+  color: var(--dark-lilac);
   font-size: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -40,7 +42,7 @@
 }
 
 .hero__lead {
-  color: var(--muted);
+  color: var(--dark-muted);
   font-size: 1.12rem;
   max-width: 36rem;
   margin-top: 1.5rem;
@@ -53,19 +55,28 @@
   margin-top: 2.25rem;
 }
 
+.hero__actions .btn-ghost {
+  border-color: var(--dark-line);
+  color: var(--dark-text);
+}
+
+.hero__actions .btn-ghost:hover {
+  border-color: var(--dark-lilac);
+}
+
 .hero__stack {
   display: flex;
   align-items: baseline;
   gap: 1.5rem;
   margin-top: clamp(3rem, 6vw, 4.5rem);
   padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--dark-line);
 }
 
 .hero__stack-label {
   flex-shrink: 0;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--dark-muted);
 }
 
 .hero__stack ul {
@@ -75,7 +86,7 @@
   list-style: none;
   padding: 0;
   font-weight: 550;
-  color: var(--text);
+  color: var(--dark-text);
 }
 
 @media (max-width: 900px) {

@@ -1,18 +1,29 @@
 :root {
-  --night: #0d0a22;
-  --deep: #151033;
-  --raise: #1e1846;
-  --line: rgba(205, 190, 255, 0.14);
+  /* tema claro — usado em toda a página, exceto Hero e Contact */
+  --night: #FBF9F5;
+  --deep: #F1EEE7;
+  --raise: #FFFFFF;
+  --line: rgba(23, 19, 43, 0.12);
   --violet: #7c5cff;
-  --violet-hi: #9a84ff;
-  --lilac: #cdbeff;
-  --text: #ece9f8;
-  --muted: #a39ec3;
-  --gold: #e7c66b;
+  --violet-hi: #6a45f0;
+  --lilac: #5b3fd6;
+  --text: #17132b;
+  --muted: #675f82;
+  --gold: #9c6f19;
+
+  /* tokens fixos escuros — só usados dentro do Hero e do Contact, que continuam escuros de propósito */
+  --dark-bg: #0d0a22;
+  --dark-panel: #151033;
+  --dark-line: rgba(205, 190, 255, 0.14);
+  --dark-text: #ece9f8;
+  --dark-muted: #a39ec3;
+  --dark-lilac: #cdbeff;
+  --dark-gold: #e7c66b;
+
   --font: 'Bricolage Grotesque', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --wrap: min(1180px, 100% - 3rem);
   --nav-h: 68px;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 *,
@@ -49,7 +60,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--lilac);
+  outline: 2px solid var(--violet);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -111,7 +122,7 @@ a {
 }
 
 .btn-ghost:hover {
-  border-color: var(--lilac);
+  border-color: var(--violet);
 }
 
 .tags {
@@ -126,7 +137,7 @@ a {
   font-size: 0.82rem;
   padding: 0.28rem 0.65rem;
   border-radius: 999px;
-  background: rgba(124, 92, 255, 0.13);
+  background: rgba(124, 92, 255, 0.1);
   color: var(--lilac);
 }
 

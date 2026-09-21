@@ -10,7 +10,7 @@ export default function Contact() {
         <p className="contact__lead">
           Conte o que precisa funcionar e em quanto tempo. Respondo por email com os próximos passos.
         </p>
-        <a className="contact__email" href={`mailto:${profile.email}`}>
+        <a className="contact__email" href={`mailto:${profile.numer}`}>
           {profile.email}
         </a>
         <div className="contact__actions">
