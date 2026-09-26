@@ -36,6 +36,31 @@
   white-space: nowrap;
 }
 
+.logobar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.logobar__logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logobar__name {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.logobar__name--wordmark {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
 .logobar__list li {
   color: var(--ink);
 }

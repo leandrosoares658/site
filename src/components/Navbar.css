@@ -9,7 +9,7 @@
 }
 
 .nav--scrolled {
-  background: rgba(243, 238, 229, 0.86);
+  background: rgba(231, 231, 231, 0.86);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line);

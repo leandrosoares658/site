@@ -15,9 +15,15 @@ export default {
     'XGBoost', 'LangGraph',
   ],
 
-  clients: [
-    'Urban Fight', 'Instituto Audioclini', 'The Cookie',
-    'Sozinha Nunca Mais', 'Escala Summit', 'Deliver System',
+   clients: [
+    { name: 'Leandro Soares', logo: 'leandrosoares-logo.png' },
+    { name: 'Urban Fight', logo: 'urbanfight-logo.png' },
+    { name: 'Instituto Audioclini', logo: 'audioclini-logo.png' },
+    { name: 'The Cookie', logo: 'thecookie-logo.png' },
+    { name: 'Sozinha Nunca Mais', logo: 'sozinhanuncamais-logo.png' },
+    { name: 'Escala Summit' },
+    { name: 'DSDeliver', logo: 'dsdeliver-logo.png' },
+    { name: 'SG Printer', logo: 'sgprinter-logo.png' },
   ],
 
   nav: {

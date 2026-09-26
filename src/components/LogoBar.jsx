@@ -1,6 +1,10 @@
 import { useLanguage } from '../i18n/LanguageContext.jsx';
 import './LogoBar.css';
 
+const logoFiles = import.meta.glob('../assets/logos/*.{png,svg,webp}', { eager: true, import: 'default' });
+const logoSrc = (file) => (file ? logoFiles[`../assets/logos/${file}`] : undefined);
+
+
 export default function LogoBar() {
   const { t } = useLanguage();
   const items = [...t.clients, ...t.clients];
@@ -17,9 +21,17 @@ export default function LogoBar() {
       <div className="logobar">
         <div className="logobar__track">
           <ul className="logobar__list">
-            {items.map((name, i) => (
-              <li key={`${name}-${i}`}>{name}</li>
-            ))}
+            {items.map((client, i) => {
+              const src = logoSrc(client.logo);
+              return (
+                <li key={`${client.name}-${i}`} className="logobar__item">
+                  {src && <img className="logobar__logo" src={src} alt="" />}
+                  <span className={src ? 'logobar__name' : 'logobar__name logobar__name--wordmark'}>
+                    {client.name}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

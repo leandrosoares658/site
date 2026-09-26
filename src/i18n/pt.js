@@ -15,9 +15,15 @@ export default {
     'XGBoost', 'LangGraph',
   ],
 
-  clients: [
-    'Urban Fight', 'Instituto Audioclini', 'The Cookie',
-    'Sozinha Nunca Mais', 'Escala Summit', 'Sistema de entregas',
+   clients: [
+    { name: 'Leandro Soares', logo: 'leandrosoares-logo.png' },
+    { name: 'Urban Fight', logo: 'urbanfight-logo.png' },
+    { name: 'Instituto Audioclini', logo: 'audioclini-logo.png' },
+    { name: 'The Cookie', logo: 'thecookie-logo.png' },
+    { name: 'Sozinha Nunca Mais', logo: 'sozinhanuncamais-logo.png' },
+    { name: 'Escala Summit' },
+    { name: 'DSDeliver', logo: 'dsdeliver-logo.png' },
+    { name: 'SG Printer', logo: 'sgprinter-logo.png' },
   ],
 
   nav: {
@@ -60,6 +66,8 @@ export default {
     { id: 'urbanfight', title: 'Urban Fight', file: 'urbanfight.jpg', type: 'image' },
     { id: 'thecookie', title: 'The Cookie', file: 'thecookie.jpg', type: 'image' },
     { id: 'deliver', title: 'Deliver System', file: 'deliver-system.jpg', type: 'image' },
+    { id: 'WebDesign', title: 'Web Design', file: 'webdesign.jpg', type: 'image' },
+    { id: 'engineering', title: 'Engineering Test', file: 'engineering-test.jpg', type: 'image' },
   ],
 
   servicesSection: {

@@ -19,7 +19,6 @@ export default function Navbar() {
     <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
       <div className="wrap nav__inner">
         <a href="#topo" className="nav__brand">
-          {/* 2. Substitua o span antigo pela imagem */}
           <img src={logoImg} alt="Logótipo" className="nav__mark" />
           {t.profile.shortName}
         </a>
