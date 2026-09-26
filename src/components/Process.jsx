@@ -1,12 +1,15 @@
-import { processSteps } from '../data/content';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 import './Process.css';
 
 export default function Process() {
+  const { t } = useLanguage();
+  const { processSteps, processSection } = t;
+
   return (
     <section className="section process">
       <div className="wrap">
         <header className="section-head">
-          <h2>Como um projeto anda comigo</h2>
+          <h2>{processSection.title}</h2>
         </header>
         <ol className="process__steps">
           {processSteps.map((step, i) => (

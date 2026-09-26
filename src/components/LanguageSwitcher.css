@@ -1,0 +1,33 @@
+.lang-switch {
+  display: flex;
+  align-items: center;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  overflow: hidden;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.lang-switch button {
+  appearance: none;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.32rem 0.6rem;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.lang-switch button:hover {
+  opacity: 1;
+}
+
+.lang-switch button[aria-pressed='true'] {
+  opacity: 1;
+  background: rgba(124, 92, 255, 0.18);
+}

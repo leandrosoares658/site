@@ -1,71 +1,57 @@
-.services {
-  background: var(--deep);
-  border-block: 1px solid var(--line);
-}
-
-.services__list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: clamp(3rem, 7vw, 5rem);
-}
-
-.service {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
+.services__head {
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(2rem, 5vw, 4rem);
 }
 
-.service:nth-child(even) .service__visual {
-  order: 2;
+.services__head .pill-label {
+  margin-bottom: 1.25rem;
 }
 
-.service__icon {
+.services__row {
   display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(124, 92, 255, 0.1);
-  color: var(--violet);
-  margin-bottom: 1.1rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.service__icon svg {
-  width: 22px;
-  height: 22px;
+.services__row--two {
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.service h3 {
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  font-weight: 650;
-  letter-spacing: -0.015em;
+.services__row--three {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.service p {
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.75rem;
+  min-height: 220px;
+}
+
+.service-card--lg {
+  min-height: 260px;
+}
+
+.service-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
   color: var(--muted);
-  margin: 0.75rem 0 1.1rem;
-  max-width: 34rem;
-}
-
-.service__visual {
-  border-radius: 24px;
-  background: linear-gradient(160deg, var(--dark-panel), #120e2c);
-  border: 1px solid var(--dark-line);
-  padding: clamp(0.5rem, 2vw, 1.1rem);
-}
-
-.service__visual svg {
-  width: 100%;
-  height: auto;
+  font-size: 0.98rem;
+  max-width: 30rem;
 }
 
 @media (max-width: 860px) {
-  .service {
+  .services__row--two,
+  .services__row--three {
     grid-template-columns: 1fr;
-  }
-  .service:nth-child(even) .service__visual {
-    order: 0;
   }
 }

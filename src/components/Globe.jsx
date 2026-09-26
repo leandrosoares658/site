@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { geoOrthographic, geoPath, geoGraticule10, geoInterpolate, geoDistance } from 'd3-geo';
-import { feature, mesh } from 'topojson-client';
+import { geoOrthographic, geoPath, geoInterpolate, geoDistance } from 'd3-geo';
+import { merge } from 'topojson-client';
 import world from 'world-atlas/countries-110m.json';
+import { useLanguage } from '../i18n/LanguageContext.jsx';
 import './Globe.css';
 
-const BRAZIL_ID = '076';
 const HOME = [-43.86, -16.73]; // Montes Claros, MG
 const CENTER = [-10, 10]; // ponto que o globo mantém de frente
 
@@ -18,10 +18,9 @@ const DESTINATIONS = [
   { name: 'Colômbia', coords: [-74.08, 4.71] },
 ];
 
-const countries = feature(world, world.objects.countries).features;
-const borders = mesh(world, world.objects.countries, (a, b) => a !== b);
-const brazil = countries.find((c) => c.id === BRAZIL_ID);
-const graticule = geoGraticule10();
+// Um único contorno de terra (sem fronteiras entre países) — igual a um
+// ícone de globo em tons de cinza, sem linhas dividindo continentes.
+const land = merge(world, world.objects.countries.geometries);
 
 const arcs = DESTINATIONS.map((d) => {
   const interp = geoInterpolate(HOME, d.coords);
@@ -32,6 +31,7 @@ const arcs = DESTINATIONS.map((d) => {
 });
 
 export default function Globe() {
+  const { t } = useLanguage();
   const ref = useRef(null);
 
   useEffect(() => {
@@ -64,42 +64,35 @@ export default function Globe() {
 
       ctx.clearRect(0, 0, size, size);
 
-      const ocean = ctx.createRadialGradient(c - r * 0.35, c - r * 0.4, r * 0.1, c, c, r);
-      ocean.addColorStop(0, '#2a2168');
-      ocean.addColorStop(1, '#100c2b');
+      // continentes num único bloco cinza (sem linha entre países, sem oceano preenchido)
+      const landFill = ctx.createLinearGradient(c - r * 0.6, c - r * 0.6, c + r * 0.6, c + r * 0.6);
+      landFill.addColorStop(0, '#C2C2C2');
+      landFill.addColorStop(1, '#8A8A8A');
+      ctx.beginPath();
+      path(land);
+      ctx.fillStyle = landFill;
+      ctx.fill();
+
+      // esmaecer as bordas do globo — apaga pixels (não pinta branco), então
+      // funciona sobre qualquer cor de fundo da página
+      ctx.save();
       ctx.beginPath();
       path({ type: 'Sphere' });
-      ctx.fillStyle = ocean;
-      ctx.fill();
-
-      ctx.beginPath();
-      path(graticule);
-      ctx.strokeStyle = 'rgba(205, 190, 255, 0.07)';
-      ctx.lineWidth = 0.6;
-      ctx.stroke();
-
-      ctx.beginPath();
-      countries.forEach((f) => f !== brazil && path(f));
-      ctx.fillStyle = '#342a78';
-      ctx.fill();
-
-      ctx.beginPath();
-      path(brazil);
-      ctx.fillStyle = '#8b6dff';
-      ctx.fill();
-
-      ctx.beginPath();
-      path(borders);
-      ctx.strokeStyle = 'rgba(13, 10, 34, 0.55)';
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
+      ctx.clip();
+      ctx.globalCompositeOperation = 'destination-out';
+      const rimFade = ctx.createRadialGradient(c, c, r * 0.72, c, c, r);
+      rimFade.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      rimFade.addColorStop(1, 'rgba(0, 0, 0, 0.92)');
+      ctx.fillStyle = rimFade;
+      ctx.fillRect(c - r, c - r, r * 2, r * 2);
+      ctx.restore();
 
       arcs.forEach((a) => {
         ctx.beginPath();
         path(a.line);
         ctx.setLineDash([5, 5]);
         ctx.lineDashOffset = reduce ? 0 : -t * 0.02;
-        ctx.strokeStyle = 'rgba(231, 198, 107, 0.75)';
+        ctx.strokeStyle = 'rgba(20, 20, 20, 0.5)';
         ctx.lineWidth = 1.2;
         ctx.stroke();
         ctx.setLineDash([]);
@@ -111,20 +104,14 @@ export default function Globe() {
         const pulse = reduce ? 0.5 : ((t * 0.0006 + i * 0.4) % 1);
         ctx.beginPath();
         ctx.arc(x, y, 4 + pulse * 14, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(231, 198, 107, ${0.8 * (1 - pulse)})`;
+        ctx.strokeStyle = `rgba(20, 20, 20, ${0.7 * (1 - pulse)})`;
         ctx.lineWidth = 1.2;
         ctx.stroke();
         ctx.beginPath();
         ctx.arc(x, y, i === 0 ? 4 : 3, 0, Math.PI * 2);
-        ctx.fillStyle = '#e7c66b';
+        ctx.fillStyle = '#141414';
         ctx.fill();
       });
-
-      ctx.beginPath();
-      path({ type: 'Sphere' });
-      ctx.strokeStyle = 'rgba(205, 190, 255, 0.28)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
 
       if (!reduce || drag) raf = requestAnimationFrame(render);
     };
@@ -170,8 +157,11 @@ export default function Globe() {
         ref={ref}
         className="globe__canvas"
         role="img"
-        aria-label="Globo com o Brasil em destaque e rotas para outros países, mostrando alcance internacional"
+        aria-label={t.globe.ariaLabel}
       />
+      <figcaption className="visually-hidden">
+        {t.globe.home} — {t.globe.legend}
+      </figcaption>
     </figure>
   );
 }

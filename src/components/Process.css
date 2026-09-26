@@ -30,9 +30,9 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--night);
-  border: 1px solid var(--violet);
-  color: var(--lilac);
+  background: var(--bg);
+  border: 1px solid var(--ink);
+  color: var(--ink);
   font-weight: 650;
   margin-bottom: 1.25rem;
 }

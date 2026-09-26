@@ -1,0 +1,55 @@
+.logobar-section {
+  padding-bottom: 0;
+}
+
+.gallery__head {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.gallery__head p {
+  margin-inline: auto;
+}
+
+.logobar {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line);
+  padding: 1.5rem 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 18%, black 82%, transparent);
+}
+
+.logobar__track {
+  width: max-content;
+  animation: logobar-scroll 34s linear infinite;
+}
+
+.logobar__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 3rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.logobar__list li {
+  color: var(--ink);
+}
+
+@keyframes logobar-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logobar__track {
+    animation: none;
+  }
+}

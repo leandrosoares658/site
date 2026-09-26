@@ -2,24 +2,21 @@
   position: relative;
   padding-top: clamp(5rem, 11vw, 9rem);
   padding-bottom: 2rem;
-  border-top: 1px solid var(--dark-line);
-  background:
-    radial-gradient(60% 80% at 85% 0%, rgba(124, 92, 255, 0.28), transparent 70%),
-    var(--dark-bg);
-  color: var(--dark-text);
+  background: var(--ink);
+  color: var(--bg);
 }
 
 .contact__title {
   font-size: clamp(2.3rem, 5.5vw, 4.4rem);
   line-height: 1.02;
   letter-spacing: -0.03em;
-  font-weight: 720;
+  font-weight: 750;
   max-width: 16ch;
   text-wrap: balance;
 }
 
 .contact__lead {
-  color: var(--dark-muted);
+  color: rgba(243, 238, 229, 0.65);
   font-size: 1.12rem;
   max-width: 34rem;
   margin-top: 1.25rem;
@@ -29,17 +26,17 @@
   display: inline-block;
   margin-top: 2.5rem;
   font-size: clamp(1.2rem, 3.6vw, 2.4rem);
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--dark-lilac);
+  color: var(--bg);
   text-decoration: none;
-  border-bottom: 2px solid rgba(205, 190, 255, 0.3);
+  border-bottom: 2px solid rgba(243, 238, 229, 0.3);
   overflow-wrap: anywhere;
   transition: border-color 0.2s;
 }
 
 .contact__email:hover {
-  border-bottom-color: var(--dark-lilac);
+  border-bottom-color: var(--bg);
 }
 
 .contact__actions {
@@ -49,13 +46,18 @@
   margin-top: 2rem;
 }
 
+.contact__actions .btn-primary {
+  background: var(--bg);
+  color: var(--ink);
+}
+
 .contact__actions .btn-ghost {
-  border-color: var(--dark-line);
-  color: var(--dark-text);
+  border-color: rgba(243, 238, 229, 0.3);
+  color: var(--bg);
 }
 
 .contact__actions .btn-ghost:hover {
-  border-color: var(--dark-lilac);
+  border-color: var(--bg);
 }
 
 .contact__base {
@@ -65,7 +67,7 @@
   gap: 0.5rem 2rem;
   margin-top: clamp(4rem, 9vw, 7rem);
   padding-top: 1.5rem;
-  border-top: 1px solid var(--dark-line);
+  border-top: 1px solid rgba(243, 238, 229, 0.16);
   font-size: 0.9rem;
-  color: var(--dark-muted);
+  color: rgba(243, 238, 229, 0.6);
 }
