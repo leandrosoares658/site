@@ -4,6 +4,14 @@
   padding-bottom: clamp(4.5rem, 10vw, 8rem);
 }
 
+.gallery .wrap {
+  width: 100%;
+  max-width: 100%; /* Anula o limite de largura que o .wrap original possuía */
+  padding-inline: 1.25rem; /* Espaço de respiro nas laterais direita e esquerda */
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
 .gallery__shelf {
   background: var(--bg-alt);
   border: 1px solid var(--line);

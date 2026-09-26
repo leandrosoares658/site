@@ -87,6 +87,13 @@
   flex-shrink: 0;
 }
 
+.nav__mark {
+  width: 34px;
+  height: 34px;
+  object-fit: contain; /* Garante que o logótipo não fica distorcido */
+  border-radius: 8px; /* Opcional, caso queira cantos arredondados na imagem */
+}
+
 .nav__whatsapp svg {
   width: 17px;
   height: 17px;
@@ -102,15 +109,8 @@
     display: none;
   }
 
-  .nav__inner {
-    position: relative;
-  }
-
+  /* Oculta o botão de e-mail/contacto nos ecrãs pequenos */
   .nav__cta {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
+    display: none; 
   }
 }

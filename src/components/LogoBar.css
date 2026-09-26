@@ -1,5 +1,6 @@
 .logobar-section {
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .gallery__head {
