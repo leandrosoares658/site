@@ -25,15 +25,49 @@
 }
 
 .service-card {
+  position: relative;
+  overflow: hidden;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 1.75rem;
-  min-height: 220px;
+  min-height: 320px;
 }
 
 .service-card--lg {
-  min-height: 260px;
+  min-height: 380px;
+}
+
+/* Imagem de fundo: ocupa o card todo e é "apagada" em cima por um degradê
+   branco, para o texto continuar legível. */
+.service-card__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+}
+
+.service-card__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--card) 0%,
+    var(--card) 32%,
+    rgba(255, 255, 255, 0.75) 52%,
+    rgba(255, 255, 255, 0) 80%
+  );
+}
+
+.service-card:hover .service-card__bg {
+  transform: scale(1.04);
+}
+
+.service-card__content {
+  position: relative;
+  z-index: 1;
 }
 
 .service-card h3 {
@@ -53,5 +87,20 @@
   .services__row--two,
   .services__row--three {
     grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .service-card--lg {
+    min-height: 300px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card__bg {
+    transition: none;
+  }
+
+  .service-card:hover .service-card__bg {
+    transform: none;
   }
 }
