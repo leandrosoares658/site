@@ -4,7 +4,7 @@ export default {
   profile: {
     name: 'Leandro Soares Pereira',
     shortName: 'Leandro Soares',
-    email: 'leandrosoares658@gmail.com',
+    email: 'soares.leandpereira@gmail.com',
     whatsapp: 'https://wa.me/5538997298506',
     github: 'https://github.com/leandrosoares658',
     city: 'Montes Claros, MG',

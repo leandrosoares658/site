@@ -111,6 +111,7 @@
 
   /* Oculta o botão de e-mail/contacto nos ecrãs pequenos */
   .nav__cta {
-    display: none; 
+    display: none;
+    visibility: hidden;
   }
 }
