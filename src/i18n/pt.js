@@ -38,7 +38,7 @@ export default {
   hero: {
     introRole: 'desenvolvedor full-stack e engenheiro de automação',
     title: 'Serviços de entrega de software completos para ajudar startups a lançar, converter e escalar melhor.',
-    lead: 'Entregamos desenvolvimento personalizado para empresas que querem crescer.',
+    lead: 'Entrego desenvolvimento personalizado para empresas que querem crescer.',
     ctaPrimary: 'Contato',
     ctaSecondary: 'Falar comigo',
     stackLabel: 'Ferramentas do dia a dia',
@@ -72,7 +72,7 @@ export default {
 
   servicesSection: {
     badge: 'Serviços',
-    title: 'O Que Podemos Fazer Pelo Seu Negócio',
+    title: 'O Que Eu Fazer Pelo Seu Negócio',
   },
 
   services: [

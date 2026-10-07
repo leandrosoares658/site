@@ -38,7 +38,7 @@ export default {
   hero: {
     introRole: 'full-stack developer and automation engineer',
     title: 'Full-cycle software delivery services to help startups launch, convert, and scale better.',
-    lead: 'We deliver custom development for companies that want to grow.',
+    lead: 'I deliver custom development for companies that want to grow.',
     ctaPrimary: 'Contact',
     ctaSecondary: 'Get in touch',
     stackLabel: 'Everyday tools',
@@ -69,7 +69,7 @@ export default {
 
   servicesSection: {
     badge: 'Services',
-    title: 'What We Can Do For Your Business',
+    title: 'What I Can Do For Your Business',
   },
 
   services: [
@@ -109,7 +109,7 @@ export default {
   contactSection: {
     title: 'Have a system you need to get off the ground?',
     lead:
-      "Tell me what needs to work and by when. I work well with US-based clients — solid overlap with US business hours, clear async communication, and invoices in USD. I'll reply by email with next steps.",
+      "Tell me what needs to work and by when. I'll reply by email with next steps.",
     emailCta: 'Send an email',
     githubCta: 'See GitHub',
   },
