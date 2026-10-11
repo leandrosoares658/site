@@ -72,7 +72,7 @@ export default {
 
   servicesSection: {
     badge: 'Serviços',
-    title: 'O Que Eu Fazer Pelo Seu Negócio',
+    title: 'O Que Eu Posso Fazer Pelo Seu Negócio',
   },
 
   services: [
