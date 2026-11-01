@@ -18,7 +18,16 @@ export default function Navbar() {
   return (
     <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
       <div className="wrap nav__inner">
-        <a href="#topo" className="nav__brand">
+        <a
+          href="#topo"
+          className="nav__brand"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Remove qualquer hash já presente na URL, sem recarregar a página
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          }}
+        >
           <img src={logoImg} alt="Logótipo" className="nav__mark" />
           {t.profile.shortName}
         </a>
