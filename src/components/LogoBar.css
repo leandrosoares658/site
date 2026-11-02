@@ -22,14 +22,19 @@
 }
 
 .logobar__track {
+  display: flex;
   width: max-content;
-  animation: logobar-scroll 34s linear infinite;
+  /* Distância percorrida dobrou; 68s mantém a mesma velocidade de antes */
+  animation: logobar-scroll 68s linear infinite;
 }
 
 .logobar__list {
   list-style: none;
-  padding: 0;
+  margin: 0;
+  /* padding = gap, para as duas listas terem a mesma largura e o loop não "saltar" */
+  padding: 0 3rem 0 0;
   display: flex;
+  flex-shrink: 0;
   gap: 3rem;
   font-size: 0.95rem;
   font-weight: 650;

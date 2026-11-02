@@ -7,7 +7,24 @@ const logoSrc = (file) => (file ? logoFiles[`../assets/logos/${file}`] : undefin
 
 export default function LogoBar() {
   const { t } = useLanguage();
+  // Cada lista repete os clientes para ser mais larga que telas grandes/zoom reduzido
   const items = [...t.clients, ...t.clients];
+
+  const renderList = (hidden) => (
+    <ul className="logobar__list" aria-hidden={hidden || undefined}>
+      {items.map((client, i) => {
+        const src = logoSrc(client.logo);
+        return (
+          <li key={`${client.name}-${i}`} className="logobar__item">
+            {src && <img className="logobar__logo" src={src} alt="" />}
+            <span className={src ? 'logobar__name' : 'logobar__name logobar__name--wordmark'}>
+              {client.name}
+            </span>
+          </li>
+        );
+      })}
+    </ul>
+  );
 
   return (
     <section className="section logobar-section" id="galeria">
@@ -20,19 +37,8 @@ export default function LogoBar() {
 
       <div className="logobar">
         <div className="logobar__track">
-          <ul className="logobar__list">
-            {items.map((client, i) => {
-              const src = logoSrc(client.logo);
-              return (
-                <li key={`${client.name}-${i}`} className="logobar__item">
-                  {src && <img className="logobar__logo" src={src} alt="" />}
-                  <span className={src ? 'logobar__name' : 'logobar__name logobar__name--wordmark'}>
-                    {client.name}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
+          {renderList(false)}
+          {renderList(true)}
         </div>
       </div>
     </section>
