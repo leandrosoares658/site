@@ -28,7 +28,7 @@ export default {
 
   nav: {
     links: [
-      ['#galeria', 'Projetos'],
+      ['#projetos', 'Projetos'],
       ['#servicos', 'Serviços'],
       ['#contato', 'Contato'],
     ],

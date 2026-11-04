@@ -27,7 +27,7 @@ export default function LogoBar() {
   );
 
   return (
-    <section className="section logobar-section" id="galeria">
+    <section className="section logobar-section" id="projetos">
       <div className="wrap">
         <header className="section-head gallery__head">
           <h2>{t.gallerySection.title}</h2>
