@@ -68,6 +68,7 @@ export default {
     { id: 'deliver', title: 'Deliver System', file: 'deliver-system.jpg', type: 'image' },
     { id: 'WebDesign', title: 'Web Design', file: 'webdesign.jpg', type: 'image' },
     { id: 'engineering', title: 'Engineering Test', file: 'engineering-test.jpg', type: 'image' },
+    { id: 'code', title: 'Desenvolvimento', file: 'code.png', type: 'image' },
   ],
 
   servicesSection: {
