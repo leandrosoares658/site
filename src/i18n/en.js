@@ -66,6 +66,9 @@ export default {
     { id: 'urbanfight', title: 'Urban Fight', file: 'urbanfight.jpg', type: 'image' },
     { id: 'deliver', title: 'Deliver System', file: 'deliver-system.jpg', type: 'image' },
     { id: 'code', title: 'Development', file: 'code.png', type: 'image' },
+    { id: 'atelierprata', title: 'Atelier Prata', file: 'atelierprata.mp4', type: 'video', url: 'https://atelierprata.netlify.app/' },
+    { id: 'baseline', title: 'Baseline Tennis Club', file: 'baselinetennisclubacademy.mp4', type: 'video', url: 'https://baselinetennisclubacademy.netlify.app/' },
+    { id: 'kimi', title: 'Kimi Antonelli', file: 'kimiantonelli.mp4', type: 'video', url: 'https://kimi-antonelli-f1.netlify.app/' },
   ],
 
   servicesSection: {

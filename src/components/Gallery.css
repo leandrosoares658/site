@@ -69,6 +69,19 @@
   background: linear-gradient(0deg, rgba(22, 20, 15, 0.75), transparent);
 }
 
+/* Cobre o card inteiro pra que o item todo seja clicável */
+.gallery__link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.gallery__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -4px;
+}
+
 .gallery__placeholder {
   height: 220px;
   display: flex;

@@ -58,6 +58,15 @@ export default function Gallery() {
                       <img src={src(item.file)} alt={`${t.gallerySection.altPrefix} ${item.title}`} loading="lazy" />
                     )}
                     {item.type !== 'placeholder' && <figcaption>{item.title}</figcaption>}
+                    {item.url && (
+                      <a
+                        className="gallery__link"
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={item.title}
+                      />
+                    )}
                   </figure>
                 ))}
               </div>
