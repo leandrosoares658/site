@@ -7,6 +7,8 @@ export default {
     email: 'soares.leandpereira@gmail.com',
     whatsapp: 'https://wa.me/5538997298506',
     github: 'https://github.com/leandrosoares658',
+    instagram: 'https://www.instagram.com/lean.drosoarespereira/',
+    instagramHandle: '@lean.drosoarespereira',
     city: 'Montes Claros, MG',
   },
 
@@ -124,5 +126,6 @@ export default {
     lead: 'Conte o que precisa funcionar e em quanto tempo. Respondo por email com os próximos passos.',
     emailCta: 'Enviar email',
     githubCta: 'Ver GitHub',
+    instagramLabel: 'Instagram',
   },
 };

@@ -60,6 +60,12 @@
   border-color: var(--bg);
 }
 
+.contact__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .contact__base {
   display: flex;
   flex-wrap: wrap;
